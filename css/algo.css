@@ -3,8 +3,7 @@ html, body {
   padding: 0;
   min-height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f7f8fb;
-  color: #1a1a1a;
+  background-color: #b2bee4;
 }
 
 body {
@@ -20,6 +19,14 @@ svg {
 #ImgReimu{
     width: 20%;
     margin-left: 40%;
+}
+#Imgdescarga{
+  width: 67%;
+  margin-left: 69%;
+}
+#Img3dmogus{
+  width: 200%;
+  margin-left: 69%;
 }
 button,
 input,
