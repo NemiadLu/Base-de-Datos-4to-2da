@@ -1,0 +1,13 @@
+1. 
+a. Verdadero. se conoce como un join implícito (sintaxis ansi sql-89), relacionando las tablas mediante where tabla1.id = tabla2.id.
+
+b. Falso. sql permite crear tablas sin clave primaria, aunque por buenas prácticas de diseño relacional siempre es recomendable incluir una.
+
+c. Falso. las subconsultas también se pueden utilizar dentro de las cláusulas select, from (como tablas derivadas) y having.
+
+d. Verdadero. se pueden listar varias tablas separadas por comas (para joins implícitos) o unirlas mediante las cláusulas de join.
+
+2.
+where: Filtra las filas individuales antes de que se realice cualquier agrupación o cálculo de agregación (group by). no permite usar funciones de agregación (sum, count, avg, etc.).
+
+having: Filtra los grupos resultantes después de aplicar group by. permite evaluar condiciones sobre funciones de agregación.
