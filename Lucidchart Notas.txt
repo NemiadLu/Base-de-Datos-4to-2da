@@ -1,0 +1,5 @@
+En lucidchart, en la pestaña de figuras, al tocar "Export" puedes obtener 
+una base de un codigo SQL de las tablas que hayas creado.
+no suele estar competo, faltarian algunos datos para terminarlo ademas de hay que restaurar.
+
+Puedes generar en el tablas y demas facilmente rapidamente sin tener que estar por tanto tiempo
