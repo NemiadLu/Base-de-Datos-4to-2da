@@ -1,3 +1,8 @@
+select t.trainer_name, c.city_name, g.gym_name
+from trainers t
+join citys c on t.id_city = c.id_city
+join gyms g on t.id_city = g.id_city;
+
 select pokemon_name, pokemon_type
 from pokemon;
 

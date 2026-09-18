@@ -76,8 +76,3 @@ insert into pokemon (id_city, id_trainer, pokemon_name, pokemon_type, power_leve
 (1, 2, 'arcanine', 'fuego', 65, 'saludable', 'si', 3),
 (1, 2, 'rapidash', 'fuego', 45, 'saludable', 'si', 1),
 (2, 1, 'pikachu', 'electrico', 60, 'saludable', 'si', 4);
-
-select t.trainer_name, c.city_name, g.gym_name
-from trainers t
-join citys c on t.id_city = c.id_city
-join gyms g on t.id_city = g.id_city;
