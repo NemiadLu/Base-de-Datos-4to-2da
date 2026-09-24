@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprende Bases de Datos - DER</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-database-fill-gear text-primary me-2"></i>BD Técnica 4° Año
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" href="index.html">1. Diagrama ER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sql.html">2. Lenguaje SQL</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="hero-der text-center mb-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Diagrama Entidad-Relación (DER)</h1>
+      <p class="lead mb-0">Modelado conceptual y diseño relacional de datos para 4.° año</p>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card card-custom p-4">
+          <h2 class="text-primary"><i class="bi bi-diagram-3-fill me-2"></i>¿Qué es el Diagrama Entidad-Relación?</h2>
+          <p class="fs-5 text-secondary">
+            Es un modelo gráfico que sirve para diseñar la estructura lógica de una base de datos antes de crearla en la computadora. Nos ayuda a estructurar cómo se almacenará la información del mundo real.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mb-4 text-secondary">Elementos Principales del DER</h3>
+    <div class="row g-4 mb-5">
+
+      <div class="col-md-4">
+        <div class="card card-custom h-100 border-start border-primary border-4 p-3">
+          <div class="card-body">
+            <h4 class="card-title text-primary"><i class="bi bi-box-seam me-2"></i>Entidad</h4>
+            <p class="card-text">Representa un objeto, persona o concepto del mundo real sobre el cual queremos almacenar datos. En el diagrama se dibuja como un <strong>rectángulo</strong>.</p>
+            <span class="badge bg-primary badge-der">Ejemplos:</span> <code>ALUMNO</code>, <code>PROFESOR</code>, <code>MATERIA</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom h-100 border-start border-success border-4 p-3">
+          <div class="card-body">
+            <h4 class="card-title text-success"><i class="bi bi-tags me-2"></i>Atributo</h4>
+            <p class="card-text">Propiedades o datos concretos que describen a una entidad. Se representan con <strong>óvalos o elipses</strong>.</p>
+            <p class="mb-1"><strong>Tipos comunes:</strong></p>
+            <ul class="small ps-3">
+              <li><strong>Clave Primaria (PK):</strong> Identificador único (ej: DNI, ID).</li>
+              <li><strong>Atributo Simple:</strong> Un solo dato (ej: Nombre, Edad).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-custom h-100 border-start border-warning border-4 p-3">
+          <div class="card-body">
+            <h4 class="card-title text-warning text-dark"><i class="bi bi-diagram-2 me-2"></i>Relación</h4>
+            <p class="card-text">Indica la acción o vínculo que conecta dos o más entidades. En el diagrama tradicional se dibuja como un <strong>rombo</strong>.</p>
+            <span class="badge bg-warning text-dark badge-der">Ejemplo:</span> Un Alumno <strong>CURSA</strong> una Materia.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card card-custom p-4">
+          <h3 class="text-primary mb-3"><i class="bi bi-arrow-left-right me-2"></i>Tipos de Relaciones (Cardinalidad)</h3>
+          <p>La cardinalidad define cuántas instancias de una entidad se pueden asociar con las instancias de otra entidad.</p>
+
+          <div class="table-responsive">
+            <table class="table table-hover table-custom">
+              <thead class="table-primary">
+                <tr>
+                  <th>Tipo</th>
+                  <th>Notación</th>
+                  <th>Explicación</th>
+                  <th>Ejemplo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Uno a Uno</strong></td>
+                  <td><span class="badge bg-secondary">1 : 1</span></td>
+                  <td>Cada registro de la Entidad A se relaciona con un solo registro de la Entidad B.</td>
+                  <td>Un <code>Alumno</code> posee un único <code>Expediente</code>.</td>
+                </tr>
+                <tr>
+                  <td><strong>Uno a Muchos</strong></td>
+                  <td><span class="badge bg-secondary">1 : N</span></td>
+                  <td>Un registro de la Entidad A puede relacionarse con muchos de B, pero B solo se relaciona con un único A.</td>
+                  <td>Un <code>Curso</code> tiene muchos <code>Alumnos</code>. Cada alumno pertenece a un solo curso.</td>
+                </tr>
+                <tr>
+                  <td><strong>Muchos a Muchos</strong></td>
+                  <td><span class="badge bg-secondary">N : M</span></td>
+                  <td>Muchos registros de la Entidad A se relacionan con muchos de B. <em>(En SQL requiere una tabla intermedia)</em>.</td>
+                  <td>Un <code>Alumno</code> cursa muchas <code>Materias</code>, y una <code>Materia</code> la cursan muchos alumnos.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <a href="sql.html" class="btn btn-primary btn-lg shadow">
+        Ir a Módulo SQL <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <p class="mb-0">NemiádSonicLuendo &copy; 2026 - Pues no puedo poner mi nombre real wey</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
