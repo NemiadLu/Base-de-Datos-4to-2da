@@ -1,0 +1,68 @@
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #198754;
+  --dark-color: #212529;
+  --code-bg: #1e1e1e;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.hero-der {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  color: #ffffff;
+  padding: 3.5rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-sql {
+  background: linear-gradient(135deg, #198754 0%, #146c43 100%);
+  color: #ffffff;
+  padding: 3.5rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-custom {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+pre code {
+  background-color: var(--code-bg);
+  color: #569cd6;
+  padding: 1.2rem;
+  border-radius: 8px;
+  display: block;
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+  overflow-x: auto;
+}
+
+.sql-keyword {
+  color: #c586c0;
+  font-weight: bold;
+}
+
+.sql-string {
+  color: #ce9178;
+}
+
+.badge-der {
+  font-size: 0.85rem;
+  padding: 0.4em 0.7em;
+}
+
+.table-custom {
+  vertical-align: middle;
+}

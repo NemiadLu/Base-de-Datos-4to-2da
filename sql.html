@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprende Bases de Datos - SQL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-database-fill-gear text-success me-2"></i>BD 4° Año ET 32
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">1. Diagrama ER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" href="sql.html">2. Lenguaje SQL</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-sql text-center mb-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Lenguaje SQL (Structured Query Language)</h1>
+      <p class="lead mb-0">Comandos básicos DDL, DML y uniones con INNER JOIN</p>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card card-custom p-4">
+          <h2 class="text-success mb-3"><i class="bi bi-tools me-2"></i>1. DDL: Definición de la Estructura</h2>
+          
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h5>Creación de Tabla (CREATE TABLE)</h5>
+<pre><code><span class="sql-keyword">CREATE TABLE</span> Alumnos (
+    id_alumno <span class="sql-keyword">INT PRIMARY KEY</span>,
+    nombre <span class="sql-keyword">VARCHAR</span>(50),
+    apellido <span class="sql-keyword">VARCHAR</span>(50),
+    id_curso <span class="sql-keyword">INT</span>
+);</code></pre>
+            </div>
+
+            <div class="col-md-6">
+              <h5>Borrado Completo (DROP)</h5>
+              <div class="alert alert-danger mb-2 p-2 small">
+                <i class="bi bi-exclamation-octagon-fill me-1"></i><strong>Atención:</strong> <code>DROP</code> elimina de la base de datos la tabla entera junto con todos sus registros.
+              </div>
+<pre><code><span class="sql-keyword">DROP TABLE</span> Alumnos;
+<span class="sql-keyword">DROP DATABASE</span> Escuela;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card card-custom p-4">
+          <h2 class="text-success mb-3"><i class="bi bi-terminal me-2"></i>2. DML: Consultas y Manipulación de Datos</h2>
+          
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h6>Insertar Registros (INSERT INTO)</h6>
+<pre><code><span class="sql-keyword">INSERT INTO</span> Alumnos 
+<span class="sql-keyword">VALUES</span> (1, <span class="sql-string">'Lucas'</span>, <span class="sql-string">'Gómez'</span>, 4);</code></pre>
+
+              <h6>Consultar con Filtro (SELECT + WHERE)</h6>
+<pre><code><span class="sql-keyword">SELECT</span> nombre, apellido 
+<span class="sql-keyword">FROM</span> Alumnos 
+<span class="sql-keyword">WHERE</span> id_curso = 4;</code></pre>
+            </div>
+
+            <div class="col-md-6">
+              <h6>Actualizar Registro (UPDATE)</h6>
+<pre><code><span class="sql-keyword">UPDATE</span> Alumnos 
+<span class="sql-keyword">SET</span> id_curso = 5 
+<span class="sql-keyword">WHERE</span> id_alumno = 1;</code></pre>
+
+              <h6>Eliminar Fila (DELETE)</h6>
+<pre><code><span class="sql-keyword">DELETE FROM</span> Alumnos 
+<span class="sql-keyword">WHERE</span> id_alumno = 1;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="card card-custom p-4 border-start border-success border-4">
+          <h2 class="text-success mb-3"><i class="bi bi-intersect me-2"></i>3. Relacionar Tablas: INNER JOIN</h2>
+          <p>
+            El comando <code>INNER JOIN</code> sirve para cruzar información entre dos tablas utilizando una <strong>Clave Primaria (PK)</strong> de una tabla y su correspondiente <strong>Clave Foránea (FK)</strong> en la otra.
+          </p>
+
+<pre><code><span class="sql-keyword">SELECT</span> Alumnos.nombre, Alumnos.apellido, Cursos.nombre_curso
+<span class="sql-keyword">FROM</span> Alumnos
+<span class="sql-keyword">INNER JOIN</span> Cursos 
+<span class="sql-keyword">ON</span> Alumnos.id_curso = Cursos.id_curso;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <a href="index.html" class="btn btn-outline-secondary btn-lg">
+        <i class="bi bi-arrow-left me-2"></i> Volver a DER
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <p class="mb-0">NemiádSonicLuendo &copy; 2026 - Pues no puedo poner mi nombre real wey</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
