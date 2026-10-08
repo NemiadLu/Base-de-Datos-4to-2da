@@ -2,10 +2,10 @@
 include("conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
-    $contrasenia = $_POST["contrasenia"];
+    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
+    $contra  = mysqli_real_escape_string($conexion, $_POST["contrasenia"]);
 
-    $sql = "INSERT INTO usuarios (nombre, constrasenia) VALUES ('$nombre', '$contrasenia')";
+    $sql = "INSERT INTO usuarios (nombre, contrasenia) VALUES ('$nombre', '$contra')";
 
     if ($conexion->query($sql) === TRUE) {
         echo "Registro guardado correctamente";
