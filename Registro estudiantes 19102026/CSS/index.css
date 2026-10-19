@@ -1,0 +1,9 @@
+ body { font-family: Arial, sans-serif; margin: 20px; 
+}
+        table {
+             width: 100%; border-collapse: collapse; margin-top: 15px; }
+
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        
+        th { background-color: #0284c7; color: white; }
+        tr:nth-child(even) { background-color: #f8fafc; }
